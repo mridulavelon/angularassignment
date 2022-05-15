@@ -1,0 +1,22 @@
+<div class="resultscontainer">
+  <div
+    *ngFor="
+      let result of results | paginate: { itemsPerPage: 9, currentPage: p }
+    "
+  >
+    <div class="card">
+      <img src="{{ result.avatar_url }}" alt="John" style="width: 100%" />
+      <h1>{{ result.login }}</h1>
+      <p class="title">{{ result.node_id }}</p>
+      <p>{{ result.type }}</p>
+      <div style="margin: 24px 0">
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+      </div>
+      <p><button>Contact</button></p>
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
